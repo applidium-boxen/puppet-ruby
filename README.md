@@ -23,7 +23,7 @@ The ruby-build version is something you should be managing in your own boxen rep
 rather than depending on this module to update for you. See examples on how to change the ruby-build
 version in the Hiera section.
 
-You can find a release list of versions for ruby-build [here](https://github.com/sstephenson/ruby-build/releases).
+You can find a release list of versions for ruby-build [here](https://github.com/rbenv/ruby-build/releases).
 
 ## Breakages since last major version
 
@@ -67,7 +67,7 @@ ruby::version { '2.2.2': }
 # Installing rbenv plugin
 ruby::rbenv::plugin { 'rbenv-vars':
   ensure => 'v1.2.0',
-  source  => 'sstephenson/rbenv-vars'
+  source  => 'rbenv/rbenv-vars'
 }
 
 # Run an installed gem
@@ -95,7 +95,7 @@ The following variables may be automatically overridden with Hiera:
 "ruby::rbenv::plugins":
   "rbenv-gem-rehash":
     "ensure": "v1.0.0"
-    "source": "sstephenson/rbenv-gem-rehash"
+    "source": "rbenv/rbenv-gem-rehash"
 
 # Environment variables for building specific versions
 # You'll want to enable hiera's "deeper" merge strategy

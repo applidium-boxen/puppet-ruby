@@ -4,7 +4,7 @@
 #
 #   ruby::rbenv::plugin { 'rbenv-vars':
 #     ensure => 'v1.2.0',
-#     source => 'sstephenson/rbenv-vars'
+#     source => 'rbenv/rbenv-vars'
 #   }
 
 define ruby::rbenv::plugin($ensure, $source) {

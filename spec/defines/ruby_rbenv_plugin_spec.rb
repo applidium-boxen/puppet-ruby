@@ -8,7 +8,7 @@ describe 'ruby::rbenv::plugin' do
   let(:default_params) do
     {
       :ensure => 'v1.2.0',
-      :source => 'sstephenson/rbenv-vars'
+      :source => 'rbenv/rbenv-vars'
     }
   end
 

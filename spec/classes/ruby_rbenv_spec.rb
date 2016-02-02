@@ -22,7 +22,7 @@ describe "ruby::rbenv" do
         should contain_repository('/test/boxen/rbenv').with({
           :ensure => 'v0.4.0',
           :force  => true,
-          :source => 'sstephenson/rbenv',
+          :source => 'rbenv/rbenv',
           :user   => 'testuser'
         })
 
@@ -43,20 +43,20 @@ describe "ruby::rbenv" do
     end
 
     context "when plugins is not empty" do
-      let(:params) { default_params.merge(:plugins => { 'rbenv-vars' => { 'ensure' => 'v1.2.0', 'source' => 'sstephenson/rbenv-vars' } } ) }
+      let(:params) { default_params.merge(:plugins => { 'rbenv-vars' => { 'ensure' => 'v1.2.0', 'source' => 'rbenv/rbenv-vars' } } ) }
 
       it do
         should contain_file('/test/boxen/rbenv/plugins')
         should contain_ruby__rbenv__plugin('rbenv-vars').with({
           :ensure => 'v1.2.0',
-          :source => 'sstephenson/rbenv-vars'
+          :source => 'rbenv/rbenv-vars'
         })
       end
     end
   end
 
   context "ensure => absent" do
-    let(:params) { default_params.merge(:ensure => 'absent', :plugins => { 'rbenv-vars' => { 'ensure' => 'v1.2.0', 'source' => 'sstephenson/rbenv-vars' } } ) }
+    let(:params) { default_params.merge(:ensure => 'absent', :plugins => { 'rbenv-vars' => { 'ensure' => 'v1.2.0', 'source' => 'rbenv/rbenv-vars' } } ) }
 
     it do
       should contain_repository('/test/boxen/rbenv').with_ensure('absent')
